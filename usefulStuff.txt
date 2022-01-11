@@ -1,8 +1,29 @@
+advanced topics: 
+1. clossures
+2. curring
+3. debounce & throttle
+
+things to learn next:
+1. accesability
+2. react
+
 function debounce(fn, wait){
   let timeoutId;
   return function(){
     const args = arguments;  
     if(timeoutId) clearTimeout(timeoutId);
+    timeoutId = setTimeout(function(){
+      timeoutId = null;
+      fn.apply(null, args);
+    }, wait);
+  }
+}
+
+function throttle(fn, wait){
+  let timeoutId;
+  return function(){
+    const args = arguments;  
+    if(timeoutId) return;
     timeoutId = setTimeout(function(){
       timeoutId = null;
       fn.apply(null, args);
