@@ -1,0 +1,10 @@
+function debounce(fn, wait){
+  let timeoutId;
+  return function(){
+    const args = arguments;
+    if(timeoutId) clearTimeout(timeoutId);
+    timeoutId = setTimeout(function(){
+      timeoutId = null;
+      fn();
+    }, wait);
+  }
