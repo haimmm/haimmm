@@ -1,0 +1,5 @@
+//refresh page params  
+  const urlParams = new URLSearchParams();
+  urlParams.append('query', 'test');
+  //document.location.search = urlParams; -> update url with page refresh
+  window.history.replaceState( null, "", `?${urlParams}`);
