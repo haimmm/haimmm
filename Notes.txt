@@ -1,7 +1,9 @@
-advanced topics: 
+advanced topics for free time: 
 1. clossures
 2. curring
 3. debounce & throttle
+4.accesability
+
 
 things to learn next:
 1. accesability
