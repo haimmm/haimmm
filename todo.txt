@@ -1,1 +1,0 @@
-1. learn how to make multi color chart (https://www.chartjs.org/docs/latest/samples/line/segments.html)
