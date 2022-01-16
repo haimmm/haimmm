@@ -85,3 +85,9 @@ https://codepen.io/haimmm/pen/vYebbmg
 /*   0%   { left: 0 } */
   100% { left: 100% }
 }
+
+const childs = document.getElementsByClassName("child");
+for(child of childs){
+  child.style.left = `${child.offsetWidth * -1}px`;
+  console.log(child.style.left)
+}
