@@ -91,3 +91,5 @@ for(child of childs){
   child.style.left = `${child.offsetWidth * -1}px`;
   console.log(child.style.left)
 }
+---------------
+https://codepen.io/Jaskaranbir/pen/JKNgrb
