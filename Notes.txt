@@ -93,3 +93,49 @@ for(child of childs){
 }
 ---------------
 https://codepen.io/Jaskaranbir/pen/JKNgrb
+
+<div id="maindiv">
+  <div id="div1">
+    &nbsp;Test-1 Test-2 Test-3 Test-4 Test-5 Test-6 Test-7 Test-8 Test-9 Test-10 Test-11
+  </div>
+  <div id="div2">
+    &nbsp;Test-1 Test-2 Test-3 Test-4 Test-5 Test-6 Test-7 Test-8 Test-9 Test-10 Test-11&nbsp;
+  </div>
+</div>
+
+#maindiv{
+  border: 2px solid black;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#div1 {
+  display: inline-block;
+  animation: marquee 10s linear infinite;
+}
+
+#div2 {
+  display: inline-block;
+  animation: marquee2 10s linear infinite;
+  animation-delay: 5s;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee2 {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-200%);
+  }
+}
+
+$('#maindiv').width($('#div1').width());
