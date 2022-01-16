@@ -35,3 +35,53 @@ function throttle(fn, wait){
 
 
 1. learn how to make multi color chart (https://www.chartjs.org/docs/latest/samples/line/segments.html)
+
+-------------------
+https://codepen.io/haimmm/pen/vYebbmg
+<div class="sliding-marquee">
+  <span>Symbol1:price1</span>
+  <span>Symbol2:price2</span>
+  <span>Symbol3:price3</span>
+</div>
+
+.sliding-marquee {
+  width: 40%;
+  height: 44px;
+  border-bottom: 2px solid grey;
+  opacity: 0.6;
+  color: black;
+  line-height: 44px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+/*   z-index: 100; */
+}
+
+.sliding-marquee span {
+  display: inline-block;
+  font-size: 1rem;
+  position: absolute;
+/*   change to width:auto and left: -width */
+  left: -120px;
+  width: 120px;
+  border: 1px solid green;
+  text-align: center;
+}
+
+.sliding-marquee span:nth-child(1) {
+  animation: marquee 9s linear infinite;
+}
+.sliding-marquee span:nth-child(2) {
+  animation: marquee 9s linear infinite;
+  animation-delay: 1.5s;
+}
+.sliding-marquee span:nth-child(3) {
+  animation: marquee 9s linear infinite;
+  animation-delay: 3s;
+}
+
+@keyframes marquee {
+/*   0%   { left: 0 } */
+  100% { left: 100% }
+}
