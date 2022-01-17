@@ -38,104 +38,81 @@ function throttle(fn, wait){
 
 -------------------
 https://codepen.io/haimmm/pen/vYebbmg
-<div class="sliding-marquee">
-  <span>Symbol1:price1</span>
-  <span>Symbol2:price2</span>
-  <span>Symbol3:price3</span>
-</div>
 
-.sliding-marquee {
-  width: 40%;
-  height: 44px;
+<div id="marqueeContainer" class="marquee-container">
+  <div id="marquee" class="marquee">
+  Just some random text blablabla 123 blablabla 123
+  </div>
+  <div id="marqueeCopy" class="marquee">
+  Just some random text blablabla 123 blablabla 123
+  </div>
+</div>
+-------
+body{
+  border: 2px solid red;
+  height: 100vh;
+  max-width: 600px;
+  margin: auto;
+}
+
+.marquee-container{
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
   border-bottom: 2px solid grey;
   opacity: 0.6;
-  color: black;
-  line-height: 44px;
-  position: absolute;
+  position: relative;
   left: 0;
   top: 0;
-  overflow: hidden;
+/*    overflow: hidden;  */
 /*   z-index: 100; */
 }
 
-.sliding-marquee span {
+.marquee {
   display: inline-block;
-  font-size: 1rem;
   position: absolute;
-/*   change to width:auto and left: -width */
-  left: -120px;
-  width: 120px;
+  min-width: 100%;
+  font-size: 2rem;
   border: 1px solid green;
-  text-align: center;
-}
-
-.sliding-marquee span:nth-child(1) {
-  animation: marquee 9s linear infinite;
-}
-.sliding-marquee span:nth-child(2) {
-  animation: marquee 9s linear infinite;
-  animation-delay: 1.5s;
-}
-.sliding-marquee span:nth-child(3) {
-  animation: marquee 9s linear infinite;
-  animation-delay: 3s;
-}
-
-@keyframes marquee {
-/*   0%   { left: 0 } */
-  100% { left: 100% }
-}
-
-const childs = document.getElementsByClassName("child");
-for(child of childs){
-  child.style.left = `${child.offsetWidth * -1}px`;
-  console.log(child.style.left)
-}
----------------
-https://codepen.io/Jaskaranbir/pen/JKNgrb
-
-<div id="maindiv">
-  <div id="div1">
-    &nbsp;Test-1 Test-2 Test-3 Test-4 Test-5 Test-6 Test-7 Test-8 Test-9 Test-10 Test-11
-  </div>
-  <div id="div2">
-    &nbsp;Test-1 Test-2 Test-3 Test-4 Test-5 Test-6 Test-7 Test-8 Test-9 Test-10 Test-11&nbsp;
-  </div>
-</div>
-
-#maindiv{
-  border: 2px solid black;
-  overflow: hidden;
   white-space: nowrap;
+/*   animation: marq 10s infinite; */
 }
 
-#div1 {
-  display: inline-block;
-  animation: marquee 10s linear infinite;
-}
+/* @keyframes marq {
+  100% { left: 200px }
+} */
+------
+const marqContainer = document.getElementById("marqueeContainer");
+const marq  = document.getElementById("marquee");
+const marq2 = document.getElementById("marqueeCopy");
 
-#div2 {
-  display: inline-block;
-  animation: marquee2 10s linear infinite;
-  animation-delay: 5s;
-}
+const marqWidth = marq.offsetWidth;
+const containerWidth = marqContainer.offsetWidth;
 
-@keyframes marquee {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
+marq.style.left = `${-marqWidth}px`;
+marq2.style.left = `${-marqWidth}px`;
+//marq2.style.left = `${-2 * marqWidth}px`;
 
-@keyframes marquee2 {
-  from {
-    transform: translateX(0%);
-  }
-  to {
-    transform: translateX(-200%);
-  }
-}
+// const path = 2 * marqWidth;
+const time = 8000;
+// const pxPerSecond = path / time;
+// const delay = marqWidth / pxPerSecond; 
 
-$('#maindiv').width($('#div1').width());
+marq.animate([
+  // keyframes
+  {left: `${marqWidth}px`}
+], {
+  // timing options
+  duration: time,
+  iterations: Infinity
+});
+
+marq2.animate([
+  // keyframes
+  {left: `${marqWidth}px`}
+], {
+  // timing options
+  duration: time,
+  iterations: Infinity,
+  delay: time/2
+});
