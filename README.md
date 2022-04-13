@@ -12,7 +12,6 @@ In the bootcamp I'm learning the core tools of web development, including HTML, 
 In this profile you can find my projects such as: \
 - [React Social Network](https://github.com/haimmm/React-Social-Network)
 - [React Notes App](https://github.com/haimmm/React-Notes-App)
-- [React Notes App](https://github.com/haimmm/React-Notes-App)
 - [Stock Search- vanillaJS](https://github.com/haimmm/Stock-Exchange-Project)
 - [Java Game Automations](https://github.com/haimmm/Java---Game-Automation)
 
