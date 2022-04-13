@@ -16,7 +16,7 @@ In this profile you can find my projects such as:
 - [Java Game Automations](https://github.com/haimmm/Java---Game-Automation)
 
 Currently I'm working on a real portfolio to show my skills and projecst in better light. \
-Im addition I'm hard working on my final project including all the stacks I mentioned above. \
-Also all my curreent projects will be highly improved in the near future, current I'm following course projects and schedules which means quantity over quality.
+In addition I'm hard working on my final project including all the stacks I mentioned above. \
+Also all my curreent projects will be highly improved in the near future, I want to improve the design, functionality and mobile device support.
 
 
