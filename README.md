@@ -9,7 +9,7 @@ I started with languages like Java and Python, but this year I've decided to pic
 So I picked a bootcamp and currently I'm a student of the [Israeli Tech challenge](https://www.itc.tech/), expected to graduate at the end of May. \
 In the bootcamp I'm learning the core tools of web development, including HTML, CSS, JS, REACT, NODE JS, MONGO DB.
 
-In this profile you can find my projects such as: \
+In this profile you can find my projects such as:
 - [React Social Network](https://github.com/haimmm/React-Social-Network)
 - [React Notes App](https://github.com/haimmm/React-Notes-App)
 - [Stock Search- vanillaJS](https://github.com/haimmm/Stock-Exchange-Project)
