@@ -22,18 +22,16 @@ function throttle(fn, wait){
   }
 }
 
-const deepComapre = (obj1, obj2) => {
-  if (
-    typeof obj1 !== "object" ||
-    typeof obj2 !== "object" ||
-    obj1 === null ||
-    obj2 === null
-  )
-    return obj1 === obj2;
-
-  for (const key in obj1) {
-    if (!deepComapre(obj1[key], obj2[key])) return false;
+function deepComapre(obj1, obj2){
+  if (typeof obj1 === 'object' && typeof obj2 === 'object') { // object validation
+    if(obj1 && obj2){ // not null validation
+      if(Object.keys(obj1).length === Object.keys(obj2).length){ // props validation 
+        for (const key in obj1) {
+           if(!deepComapre(obj1[key], obj2[key])) return false; // recursion
+        }
+        return true;
+      }
+    }
   }
-
-  return Object.keys(obj1).length === Object.keys(obj2).length;
+  return obj1 === obj2; // values vlaidation
 };
