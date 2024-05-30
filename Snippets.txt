@@ -35,3 +35,73 @@ function deepComapre(obj1, obj2){
   }
   return obj1 === obj2; // values vlaidation
 };
+
+const getSafeDivision = (numerator, denominator) => {
+  if (
+    isNaN(numerator) ||
+    isNaN(denominator) ||
+    numerator === 0 ||
+    denominator === 0
+  )
+    return 0;
+
+  return numerator / denominator;
+};
+
+export const numberFormat = (
+  param,
+  minimumFractionDigits = 0,
+  maximumFractionDigits = 2,
+  style = "decimal" // decimal | currency | percent | unit
+) => {
+  const num = Number(param);
+
+  if (isNaN(num)) {
+    console.error("unexpected type of ", param);
+    return param;
+  }
+
+  return num.toLocaleString("he-IL", {
+    minimumFractionDigits,
+    maximumFractionDigits,
+    style,
+    currency: "ILS",
+  });
+};
+
+export const typingNumberFormat = (
+  param,
+  minimumFractionDigits = 0,
+  maximumFractionDigits = 2
+) => {
+  let num,
+    stringEnd = "",
+    foundDot = false;
+
+  switch (typeof param) {
+    case "string":
+      param = param.replace(/\D/g, (match) => {
+        if (match === "." && !foundDot) {
+          foundDot = true;
+          return match;
+        }
+        return "";
+      });
+      if (param.endsWith(".")) stringEnd = ".";
+      num = Number(param);
+      break;
+    case "number":
+      num = param;
+      break;
+    default:
+      console.error("unexpected type of ", param);
+      return param;
+  }
+
+  const formatted = num.toLocaleString("he-IL", {
+    minimumFractionDigits,
+    maximumFractionDigits,
+  });
+
+  return formatted + stringEnd;
+};
